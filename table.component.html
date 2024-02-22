@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>First name</th>
+      <th>Last name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let group of groupedData">
+      <tr *ngIf="group.data.length > 1" class="group-heading">
+        <td colspan="3">Common Year: {{ group.year }}</td>
+      </tr>
+      <tr *ngFor="let item of group.data">
+        <td>{{ item.Date }}</td>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
